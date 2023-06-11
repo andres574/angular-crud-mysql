@@ -1,0 +1,74 @@
+<h1 class="text-center my-5"><b>{{tituloPag}}</b></h1>
+
+<form  [formGroup]="crearUser" (ngSubmit)="AccionAddEdit()" >
+  <div class="container">
+    <div class="coloadver" *ngIf="isSubmit && crearUser.invalid">Todos los campos son obligatorios</div>
+    <div class="row col-12 py-3">
+      <div class="col-3">
+        <label for="">Tipo de Documento</label>
+        <select class="form-select " aria-label=".form-select-lg example" formControlName="tipoDocumento">
+          <option value="" [selected]="true" [disabled]="true">Seleccione una opcion</option>
+          <option *ngFor="let item of documentos" value="{{item.id_tipo_doc}}">{{item.descripcion}}</option>
+        </select>
+      </div>
+      <div class="col-3">
+        <label for=""># Numero de documento</label>
+        <input type="number" class="form-control" placeholder="# De documento" formControlName="numeroDocumento">
+      </div>
+      <div class="col-3">
+        <label for="">Nombre Completo</label>
+        <input type="text" class="form-control" placeholder="Nombre completo"  formControlName="nombre">
+      </div>
+      <div class="col-3">
+        <label for="">Apellidos completos</label>
+        <input type="text" class="form-control" placeholder="Apellidos" formControlName="apellido" ngxTrim>
+      </div>
+    </div>
+    <div class="row col-12 py-2">
+
+      <div class="col-3">
+        <label for="">Fecha de nacimiento</label>
+        <input type="date" class="form-control" placeholder="Nombre completo" formControlName="fechaNacimiento">
+      </div>
+      <div class="col-3">
+        <label for="">Fecha de Afiliacion</label>
+        <input type="date" class="form-control" placeholder="Nombre completo" formControlName="fechaAfiliacion">
+
+      </div>
+      <div class="col-3">
+        <label for="">Direccion</label>
+        <input type="text" class="form-control" placeholder="cll ........." formControlName="direccion">
+      </div>
+      <div class="col-3">
+        <label for="">Telefono</label>
+        <input type="number" class="form-control" placeholder="Telefono" formControlName="telefono">
+      </div>
+      
+    </div>
+    <div class="row col-12 py-2">
+
+      <div class="col-3">
+        <label for="">Sisben</label>
+        <input type="text" class="form-control" placeholder="puntaje sisben" formControlName="sisben">
+      </div>
+      <div class="col-3 center ">
+        <label for="">nivel de Sisben</label>
+        <select class="form-select " aria-label=".form-select-lg example" formControlName="nivelSisben">
+          <option value="" [selected]="true" [disabled]="true">Seleccione una opcion</option>
+          <option *ngFor="let item of nSisben" value="{{item.id_sisben}}">{{item.puntaje_sisben}}</option>
+        </select>
+        
+      </div>
+    </div>
+
+    <div class="col-12 d-flex justify-content-between">   
+
+      <button type="button" class="btn btn-primary" [routerLink]="[ '/']">Volver a inicio</button>
+      <button type="submit" class="btn btn-success">{{btnSubmit}}</button>      
+
+    </div>
+
+
+
+  </div>
+</form>

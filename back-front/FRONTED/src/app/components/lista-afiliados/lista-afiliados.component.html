@@ -1,0 +1,43 @@
+<h1 class="text-center">LISTA DE AFILIADOS</h1>
+
+  
+<div class="container">
+    <table class="table mt-5 table-striped table-hover">
+  
+    <thead>
+    <tr>
+      <!-- <th class ="text-center" scope="col">#</th> -->
+      <th class ="text-center" scope="col">CC</th>
+      <th class ="text-center" scope="col">Nombre</th>
+      <th class ="text-center" scope="col">Apellidos</th>
+      <th class ="text-center" scope="col">Fecha afiliacion</th>
+      <th class ="text-center" scope="col">Edad</th>
+      <th class ="text-center" scope="col">Nvel sisben</th>
+      <th class ="text-center" scope="col">Direccion</th>
+      <th class ="text-center" scope="col">Telefono</th>
+      <th class ="text-center" scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let afiliado of afiliadoArray">
+     <!-- <td class ="align-middle text-center">{{afiliado.id_afiliado}}</td> -->
+     <td class ="align-middle text-center">{{afiliado.CC}}</td>
+     <td class ="align-middle text-center">{{afiliado.nombre}}</td>
+     <td class ="align-middle text-center">{{afiliado.apellidos}}</td>
+     <td class ="align-middle text-center">{{afiliado.fecha_afiliacion | date:'yyyy-MM-dd ' }}</td>
+     <td class ="align-middle text-center">{{afiliado.edad}}</td>
+     <td class ="align-middle text-center">{{afiliado.puntaje_sisben}}</td>
+     <td class ="align-middle text-center">{{afiliado.direccion}}</td>
+     <td class ="align-middle text-center">{{afiliado.telefono}}</td>
+     <th> <div class="d-flex justify-content-between">
+    <button type="button" class ="btn btn-danger " (click)="eliminar(afiliado.id_afiliado)">Eliminar</button>
+    <button class="btn btn-info px-3 py-2" type="button" [routerLink]="['../editar',afiliado.id_afiliado]">Actualizar</button>
+    </div></th>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+
+

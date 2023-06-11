@@ -1,0 +1,14 @@
+.imagen1{
+    width: 400px;
+    height: 150px;
+}
+
+.fondoNav{
+    background-color: #009487;
+    
+}
+
+.fondoparte{
+    background-image: url('../assets/image/fondo.jpg');
+    
+}
